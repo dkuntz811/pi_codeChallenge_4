@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Treat Yoself</title>
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <script src="../vendor/jquery.min.js"></script>
+    <script src="../scripts/clientapp.js"></script>
+    <link rel="stylesheet" href="../vendor/normalize.css" />
+    <link rel="stylesheet" href="../vendor/skeleton.css" />
+    <link rel="stylesheet" href="../styles/stylesheet.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <div class="row">
+            <div class="eight columns">
+            <h1>Delicious treats are delicious</h1>
+          </div>
+        <div class="four columns">
+          <div class="search row">
+            <div class="nine columns">
+              <input class="u-max-full-width" type="text" placeholder="Find a treat" id="search" name="query" />
+            </div>
+            <div class="three columns">
+              <button id="searchButton">Go</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </header>
+      <section class="row">
+        <!--- Main treat display -->
+        <div class="eight columns" id="treat-display">
+          <!-- Treat row should repeat for every 2 treats -->
+          <div class="treat row">
+            <div class="six columns individual-treat">
+              <div class="image-wrap">
+                <img src="../assets/cupcake.jpg" class="u-max-full-width" />
+                <div class="toggle row">
+                  <div class="six columns"><button class="edit u-full-width">Edit</button></div>
+                  <div class="six columns"><button class="delete u-full-width">Delete</button></div>
+                </div>
+              </div>
+              <h3>
+                Cupcake
+              </h3>
+              <p>
+                Delicious cupcakes mmmm
+              </p>
+            </div>
+            <div class="six columns individual-treat">
+              <div class="image-wrap">
+                <img src="../assets/donuts.jpg" class="u-max-full-width" />
+                <div class="toggle row">
+                  <div class="six columns"><button class="edit u-full-width">Edit</button></div>
+                  <div class="six columns"><button class="delete u-full-width">Delete</button></div>
+                </div>
+              </div>
+              <h3>
+                Donuts
+              </h3>
+              <p>
+                Delicious cupcakes mmmm
+              </p>
+            </div>
+
+          </div>
+          <!-- Treat row should repeat for every 2 treats -->
+          <div class="treat row">
+            <div class="six columns individual-treat">
+              <div class="image-wrap">
+                <img src="../assets/cupcake.jpg" class="u-max-full-width" />
+                <div class="toggle row">
+                  <div class="six columns"><button class="edit u-full-width">Edit</button></div>
+                  <div class="six columns"><button class="delete u-full-width">Delete</button></div>
+                </div>
+              </div>
+              <h3>
+                Cupcake
+              </h3>
+              <p>
+                Delicious cupcakes mmmm
+              </p>
+            </div>
+            <div class="six columns individual-treat">
+              <div class="image-wrap">
+                <img src="../assets/donuts.jpg" class="u-max-full-width" />
+                <div class="toggle row">
+                  <div class="six columns"><button class="edit u-full-width">Edit</button></div>
+                  <div class="six columns"><button class="delete u-full-width">Delete</button></div>
+                </div>
+              </div>
+              <h3>
+                Donuts
+              </h3>
+              <p>
+                Delicious cupcakes mmmm
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- sidebar -->
+        <div class="four columns">
+          <!--- Add treat form -->
+          <div class="entry row">
+            <h2 class="fancy">add a treat</h2>
+            <form>
+              <div class="row">
+                <label for="treatNameInput">Name</label>
+                <input class="u-full-width" type="text" placeholder="Cake" id="treatNameInput" />
+              </div>
+              <div class="row">
+                <label for="treatDescriptionInput">Description</label>
+                <textarea class="u-full-width" placeholder="Tasty cake is tasty" id="treatDescriptionInput"></textarea>
+              </div>
+              <div class="row">
+                <label for="treatUrlInput">Image Url</label>
+                <input class="u-full-width" type="text" placeholder="http://cake.com/layer.jpg" id="treatUrlInput" />
+              </div>
+              <input id="saveNewButton" class="button-primary" type="submit" value="submit" />
+            </form>
+          </div>
+      </div>
+      </section>
+    </main>
+  </body>
+</html>

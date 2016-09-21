@@ -38,7 +38,8 @@ app.get('/treats', function (req, res){
 			queryResults.on('end', function(){
 				//done then send the results to client
 				done();
-				res.send(results);
+				return res.json(results);
+				console.log('results are', results);
 			}); //end done
 		}
 	});//end pgconnect
@@ -46,6 +47,10 @@ app.get('/treats', function (req, res){
 
 app.post('/treats', urlencodedParser, function (req, res){
 	console.log('in newTreat:', req.body);
+
+	var name = req.body.name;
+	var description = req.body.description;
+	var url = req.body.url;
 	pg.connect(connectionString, function (err, client, done){
 		if (err){
 			console.log(err);
@@ -53,12 +58,17 @@ app.post('/treats', urlencodedParser, function (req, res){
 		else{
 			console.log('connected to db for POST');
 			//insert new treat into db
-			client.query('INSERT INTO treats(name, description, pic) VALUES ($1, $2, $3)', [req.body.name, req.body.description, req.body.pic]);
-		} //end no error
-
+			var queryResults = client.query('INSERT INTO treats (name, description, imageurl) VALUES ($1, $2, $3)', [name, description, url]);
+          done();
+		} //end else
+        queryResults.on('end', function(){
+					done();
+					//send back something to client will get to success
+					res.send({success: true});
+				});//end queryResult on
 	})//end pg.connect
-	//send back something to client will get to success
-	res.send(true);
+
+
 });//end app.post
 //static file
 app.use( express.static( 'public' ) );

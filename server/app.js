@@ -53,7 +53,7 @@ app.post('/treats', urlencodedParser, function (req, res){
 		else{
 			console.log('connected to db for POST');
 			//insert new treat into db
-			client.query('INSERT INTO treats(treat_name, treat_description, treat_image_url) VALUES ($1, $2, $3)', [req.body.name, req.body.description, req.body.image_url]);
+			client.query('INSERT INTO treats(name, description, pic) VALUES ($1, $2, $3)', [req.body.name, req.body.description, req.body.pic]);
 		} //end no error
 
 	})//end pg.connect

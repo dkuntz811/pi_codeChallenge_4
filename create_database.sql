@@ -6,5 +6,5 @@ CREATE TABLE treats (
 id SERIAL PRIMARY KEY,
 treat_name VARCHAR (100),
 treat_description VARCHAR (300),
-treat_image_url VARCHAR NOT NULL
+treat_image_url VARCHAR (100)
 );

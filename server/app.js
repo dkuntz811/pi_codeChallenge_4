@@ -34,8 +34,10 @@ app.get('/treats', function (req, res){
 			queryResults.on('row', function(row){
 				//push each row into results array
 				results.push(row);
+				
 			}); //end on row
 			queryResults.on('end', function(){
+
 				//done then send the results to client
 				done();
 				return res.json(results);
